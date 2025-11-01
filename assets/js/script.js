@@ -466,13 +466,43 @@ function renderAboutCards(aboutData) {
     });
 }
 
-// Initialize the page
-document.addEventListener('DOMContentLoaded', function() {
-    loadCompetitions();
-    loadProgram();
+/**
+ * Fetches a JSON resource and calls a render function with the data.
+ * Handles errors gracefully by displaying a message in the container.
+ * @param {string} url - The URL of the JSON file.
+ * @param {function} renderFn - The function to call with the fetched data.
+ * @param {string} containerId - The ID of the container to show an error message.
+ * @param {string} errorMsg - The error message to display.
+ */
+async function loadAndRender(url, renderFn, containerId, errorMsg) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        renderFn(data);
+    } catch (error) {
+        console.error(`Could not load data from ${url}:`, error);
+        const container = document.getElementById(containerId);
+        if (container) {
+            container.innerHTML = `<p class="text-center text-red-500 col-span-full">${errorMsg}</p>`;
+        }
+    }
+}
+
+function initializeApp() {
     updateCountdown();
-    loadPreviousEditions();
-    loadSpeakers();
-    loadSponsors();
-    loadAboutCards();
-});
+
+    Promise.all([
+        loadAndRender('assets/js/competitions.json', renderCompetitions, 'competitions-container', 'Não foi possível carregar as competições.'),
+        loadAndRender('assets/js/program.json', renderProgram, 'day1', 'Não foi possível carregar a programação.'),
+        loadAndRender('assets/js/previous-editions.json', renderPreviousEditions, 'previous-editions-container', 'Não foi possível carregar as edições anteriores.'),
+        loadAndRender('assets/js/speakers.json', renderSpeakers, 'speakers-container', 'Não foi possível carregar os palestrantes.'),
+        loadAndRender('assets/js/sponsors.json', renderSponsors, 'sponsors-container', 'Não foi possível carregar os patrocinadores.'),
+        loadAndRender('assets/js/about.json', renderAboutCards, 'about-cards-container', 'Não foi possível carregar os detalhes do evento.')
+    ]);
+}
+
+// Initialize the page
+document.addEventListener('DOMContentLoaded', initializeApp);
