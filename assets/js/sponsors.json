@@ -1,0 +1,22 @@
+[
+  {
+    "name": "ENGCO",
+    "logo": "assets/img/sponsors/logo-engco.png",
+    "link": "#"
+  },
+  {
+    "name": "ECOTECH",
+    "logo": "assets/img/sponsors/logo-ecotech.png",
+    "link": "#"
+  },
+  {
+    "name": "BUILDCORP",
+    "logo": "assets/img/sponsors/logo-buildcorp.png",
+    "link": "#"
+  },
+  {
+    "name": "RENOVA",
+    "logo": "assets/img/sponsors/logo-renova.png",
+    "link": "#"
+  }
+]

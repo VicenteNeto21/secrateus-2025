@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Pontes de Palito",
+    "prize": "R$ 150,00",
+    "description": "Construa a ponte mais resistente e teste a carga máxima ao vivo. Uma oportunidade para aplicar conceitos de engenharia estrutural de forma prática e criativa.",
+    "requirements": [
+      "Utilizar apenas palitos de sorvete e cola quente",
+      "Dimensões máximas: 50cm de comprimento",
+      "Peso máximo: 200g"
+    ],
+    "date": "26 de Novembro",
+    "editalLink": "#",
+    "color": "blue"
+  },
+  {
+    "title": "Jogos Mineiros",
+    "prize": "R$ 150,00",
+    "description": "Desafios de lógica e criatividade com blocos inspirados em Minecraft. Teste suas habilidades de resolução de problemas em um ambiente lúdico e desafiador.",
+    "requirements": [
+      "Equipes de 2 a 4 participantes",
+      "Conhecimento básico de lógica de programação",
+      "Criatividade e trabalho em equipe"
+    ],
+    "date": "27 de Novembro",
+    "editalLink": "#",
+    "color": "green"
+  }
+]

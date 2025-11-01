@@ -1,0 +1,37 @@
+[
+  {
+    "date": "20 de Outubro, 2025",
+    "title": "Inscrições Abertas!",
+    "category": "Anúncio Oficial",
+    "link": "#registration",
+    "image": "https://images.unsplash.com/photo-1579226905180-636b76d96082?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "date": "15 de Outubro, 2025",
+    "title": "Jorge Gomes",
+    "category": "Palestrante Confirmado",
+    "link": "#program",
+    "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "date": "10 de Outubro, 2025",
+    "title": "Ação Solidária",
+    "category": "Evento Confirmado",
+    "link": "#home",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "date": "05 de Outubro, 2025",
+    "title": "Edital das Competições",
+    "category": "Documento Liberado",
+    "link": "#competitions",
+    "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "date": "01 de Outubro, 2025",
+    "title": "Parceria com a ENGCO",
+    "category": "Novo Patrocinador",
+    "link": "#sponsors",
+    "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80"
+  }
+]

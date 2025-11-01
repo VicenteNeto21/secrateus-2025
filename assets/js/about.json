@@ -1,0 +1,38 @@
+[
+  {
+    "icon": "fa-calendar-day",
+    "title": "Quando?",
+    "description": "26 e 27 de Novembro de 2025",
+    "color": "blue"
+  },
+  {
+    "icon": "fa-map-marker-alt",
+    "title": "Onde?",
+    "description": "UFC - Campus de Crateús",
+    "color": "green"
+  },
+  {
+    "icon": "fa-users",
+    "title": "Para quem?",
+    "description": "Estudantes, profissionais e entusiastas de engenharia.",
+    "color": "yellow"
+  },
+  {
+    "icon": "fa-bolt",
+    "title": "Energias Renováveis",
+    "description": "Explore o futuro da energia limpa e seu impacto.",
+    "color": "purple"
+  },
+  {
+    "icon": "fa-recycle",
+    "title": "Sustentabilidade",
+    "description": "Debata práticas para um planeta mais saudável.",
+    "color": "green"
+  },
+  {
+    "icon": "fa-lightbulb",
+    "title": "Inovação",
+    "description": "Conheça as tecnologias que estão moldando o futuro.",
+    "color": "blue"
+  }
+]
