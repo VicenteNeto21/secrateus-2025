@@ -131,25 +131,37 @@ function renderCompetitions(competitionsData) {
         const requirementsHTML = comp.requirements.map(req => `<li>${req}</li>`).join('');
 
         const competitionHTML = `
-            <div class="bg-gradient-to-br from-${comp.color}-50 to-${comp.color}-100 rounded-2xl shadow-lg overflow-hidden card-hover">
-                <div class="p-6 md:p-8">
-                    <div class="flex flex-col sm:flex-row justify-between items-start mb-6 gap-4">
-                        <h3 class="text-xl md:text-2xl font-bold text-gray-800">${comp.title}</h3>
-                        <div class="bg-${comp.color}-500 text-white px-3 py-1 rounded-full text-sm font-bold whitespace-nowrap">
-                            <i class="fas fa-trophy mr-1"></i> ${comp.prize}
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-6">${comp.description}</p>
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover group flex flex-col border-t-4 border-${comp.color}-500">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-3">${comp.title}</h3>
+                    <p class="text-gray-600 mb-5">${comp.description}</p>
+
+                    <!-- Requirements -->
                     <div class="mb-6">
                         <h4 class="font-bold text-gray-800 mb-2">Requisitos:</h4>
-                        <ul class="text-gray-600 list-disc pl-5 space-y-1">${requirementsHTML}</ul>
+                        <ul class="text-sm text-gray-600 list-disc pl-5 space-y-1">${requirementsHTML}</ul>
                     </div>
-                    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-${comp.color}-200">
-                        <div class="text-sm text-gray-500"><i class="far fa-calendar mr-1"></i> ${comp.date}</div>
-                        <div class="flex items-center gap-3 mt-4 sm:mt-0">
-                            <a href="${comp.editalLink}" target="_blank" rel="noopener" class="border border-${comp.color}-500 text-${comp.color}-500 px-4 py-2 rounded-lg font-bold hover:bg-${comp.color}-50 transition duration-200 text-sm whitespace-nowrap">Ler Edital</a>
-                            <a href="#registration" class="bg-${comp.color}-500 text-white px-4 py-2 rounded-lg font-bold hover:bg-${comp.color}-600 transition duration-200 text-sm flex items-center gap-2 whitespace-nowrap"><i class="fas fa-user-plus"></i> Inscrever-se</a>
+                    
+                    <!-- Prize and Date -->
+                    <div class="grid grid-cols-2 gap-4 mb-6 text-center">
+                        <div class="bg-${comp.color}-50 border border-${comp.color}-200 rounded-lg p-3 flex flex-col justify-center">
+                            <div class="text-xs text-${comp.color}-700 font-bold uppercase">PRÊMIO</div>
+                            <div class="text-lg font-extrabold text-${comp.color}-800">${comp.prize}</div>
                         </div>
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-3 flex flex-col justify-center">
+                            <div class="text-xs text-red-700 font-bold uppercase">ENCERRAMENTO</div>
+                            <div class="text-lg font-extrabold text-red-800">23/11</div>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="mt-auto pt-5 border-t border-gray-200">
+                        <a href="${comp.registrationLink}" target="_blank" rel="noopener" class="w-full block bg-${comp.color}-500 text-white text-center px-4 py-3 rounded-lg font-bold hover:bg-${comp.color}-600 transition duration-200 text-base flex items-center justify-center gap-2">
+                            <i class="fas fa-user-plus"></i> Inscrever-se
+                        </a>
+                        <a href="${comp.editalLink}" target="_blank" rel="noopener" class="w-full block text-center text-gray-600 mt-3 font-semibold hover:text-${comp.color}-600 transition duration-200 text-sm">
+                            Ler o edital completo
+                        </a>
                     </div>
                 </div>
             </div>`;
@@ -184,6 +196,29 @@ function renderProgram(programData) {
     if (!containers[1] || !containers[2]) return;
 
     Object.values(containers).forEach(c => c.innerHTML = '');
+
+    // --- Dynamic Legend ---
+    const legendContainer = document.getElementById('program-legend');
+    if (legendContainer) {
+        // Extrai tipos e cores únicos do JSON
+        const eventTypes = programData.reduce((acc, event) => {
+            if (!acc.some(item => item.type === event.type)) {
+                acc.push({ type: event.type, color: event.color });
+            }
+            return acc;
+        }, []);
+
+        let legendHTML = '';
+        eventTypes.forEach(item => {
+            legendHTML += `
+                <div class="flex items-center gap-2">
+                    <div class="w-3 h-3 bg-${item.color}-500 rounded-full"></div>
+                    <span class="text-sm text-gray-600">${item.type}</span>
+                </div>`;
+        });
+        legendContainer.innerHTML = legendHTML;
+    }
+    // --- End Dynamic Legend ---
 
     programData.forEach(event => {
         const registrationHTML = event.registration ?
@@ -318,65 +353,49 @@ function renderPreviousEditions(editionsData) {
     });
 }
 
-// Load News from JSON
-async function loadNews() {
+// Load Speakers from JSON
+async function loadSpeakers() {
     try {
-        const response = await fetch('assets/js/news.json');
+        const response = await fetch('assets/js/speakers.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        const newsData = await response.json();
-        renderNews(newsData);
+        const speakersData = await response.json();
+        renderSpeakers(speakersData);
     } catch (error) {
-        console.error("Could not load news data:", error);
-        const container = document.getElementById('news-container');
+        console.error("Could not load speakers data:", error);
+        const container = document.getElementById('speakers-container');
         if(container) {
-            container.innerHTML = `<p class="text-center text-red-500">Não foi possível carregar as novidades.</p>`;
+            container.innerHTML = `<p class="text-center text-red-500 col-span-full">Não foi possível carregar os palestrantes.</p>`;
         }
     }
 }
 
-function renderNews(newsData) {
-    const container = document.getElementById('news-container');
+function renderSpeakers(speakersData) {
+    const container = document.getElementById('speakers-container');
     if (!container) return;
-    container.innerHTML = '';
+    let allSpeakersHTML = '';
 
-    newsData.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'flex-shrink-0 w-4/5 sm:w-1/2 lg:w-1/3 scroll-snap-start';
-        card.innerHTML = `
-            <a href="${item.link}" class="block rounded-2xl shadow-lg card-hover overflow-hidden group relative h-80">
-                <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                <div class="absolute inset-0 news-card-overlay"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <div class="news-card-content">
-                        <h3 class="text-2xl font-bold">${item.title}</h3>
-                        <p class="text-yellow-300 font-semibold">${item.category}</p>
+    speakersData.forEach(speaker => {
+        const speakerHTML = `
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden text-center group card-hover border-b-4 border-${speaker.color}-500">
+                <div class="relative">
+                    <img src="${speaker.image}" alt="Foto de ${speaker.name}" class="w-full h-64 object-cover grayscale group-hover:grayscale-0 transition-all duration-300">
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
+                        <h3 class="text-xl font-bold text-white">${speaker.name}</h3>
+                        <p class="text-yellow-300 font-medium">${speaker.title}</p>
                     </div>
                 </div>
+                <div class="p-6">
+                    <p class="text-gray-700 font-semibold mb-4">Palestra: <span class="text-${speaker.color}-600">"${speaker.topic}"</span></p>
+                    <a href="${speaker.linkedin}" target="_blank" rel="noopener" class="inline-block bg-${speaker.color}-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-${speaker.color}-700 transition-colors duration-200">
+                        <i class="fab fa-linkedin mr-2"></i> Ver Perfil
+                    </a>
+                </div>
             </div>`;
-        container.appendChild(card);
+        allSpeakersHTML += speakerHTML;
     });
-
-    setupNewsCarouselControls();
-}
-
-function setupNewsCarouselControls() {
-    const container = document.getElementById('news-container');
-    const prevBtn = document.getElementById('news-prev');
-    const nextBtn = document.getElementById('news-next');
-
-    if (!container || !prevBtn || !nextBtn) return;
-
-    nextBtn.addEventListener('click', () => {
-        const cardWidth = container.querySelector('.scroll-snap-start').offsetWidth;
-        container.scrollBy({ left: cardWidth, behavior: 'smooth' });
-    });
-
-    prevBtn.addEventListener('click', () => {
-        const cardWidth = container.querySelector('.scroll-snap-start').offsetWidth;
-        container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-    });
+    container.innerHTML = allSpeakersHTML;
 }
 
 // Load Sponsors from JSON
@@ -453,7 +472,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadProgram();
     updateCountdown();
     loadPreviousEditions();
-    loadNews();
+    loadSpeakers();
     loadSponsors();
     loadAboutCards();
 });
