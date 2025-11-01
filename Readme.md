@@ -8,7 +8,7 @@ Este repositório contém o código-fonte da landing page oficial do evento "Sem
 
 O tema para o evento de 2025 é: **"Transição Sustentável: O Papel das Engenharias no Futuro das Organizações, Sociedade e Meio Ambiente"**.
 
-![Uma captura de tela da seção principal do site](https://raw.githubusercontent.com/VicenteNeto21/secrateus-2025/refs/heads/developer/assets/img/tela.PNG)
+![Uma captura de tela da seção principal do site](https://github.com/VicenteNeto21/secrateus-2025/blob/main/assets/img/tela.PNG?raw=true)
 
 ## ✨ Funcionalidades
 
