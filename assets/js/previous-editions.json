@@ -1,25 +1,30 @@
 [
   {
-    "year": "2024",
-    "title": "Inovação e Tecnologia",
-    "date": "21-22 de Novembro",
-    "color": "blue",
-    "link": "#"
+    "year": "2019",
+    "title": "SE 2019: A engenharia na era da Tecnologia",
+    "date": "05-06 de Novembro",
+    "color": "purple",
+    "link": "https://se.crateus.ufc.br/ano/2020"
   },
   {
-    "year": "2023",
-    "title": "Engenharia Sustentável",
-    "date": "22-23 de Novembro",
-    "tags": ["Sustentabilidade", "Energia Solar", "Ecoinovação"],
-    "color": "green",
-    "link": "#"
+    "year": "2021",
+    "title": "SE 2021: Cidades Sustentáveis e Inteligentes",
+    "date": "29-30 de Novembro",
+    "color": "yellow",
+    "link": "https://se.crateus.ufc.br/ano/2021"
   },
   {
     "year": "2022",
-    "title": "O Futuro da Construção",
-    "date": "23-24 de Novembro",
-    "tags": ["Construção Civil", "BIM", "Materiais"],
-    "color": "purple",
-    "link": "#"
+    "title": "SE 2022: União FIT, Semana das Engenharias e a Semana do Meio Ambiente",
+    "date": "29-30 de Novembro",
+    "color": "blue",
+    "link": "https://sistemas.crateus.ufc.br/eventos/evento/250"
+  },
+  {
+    "year": "2023",
+    "title": "SE 2023: Praticas ambientais, sociais e governança (ESG)",
+    "date": "06-07 de Novembro",
+    "color": "green",
+    "link": "https://se.crateus.ufc.br/ano/2023"
   }
 ]

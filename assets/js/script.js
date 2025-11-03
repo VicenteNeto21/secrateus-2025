@@ -330,10 +330,8 @@ function renderPreviousEditions(editionsData) {
     container.innerHTML = '';
 
     editionsData.forEach(edition => {
-        const tagsHTML = edition.tags.map(tag => `<span class="bg-${edition.color}-100 text-${edition.color}-800 px-2 py-1 rounded text-xs font-medium">${tag}</span>`).join('');
-
         const editionHTML = `
-            <a href="${edition.link}" target="_blank" rel="noopener" class="block bg-white rounded-2xl shadow-lg overflow-hidden card-hover group border-t-4 border-${edition.color}-500">
+            <a href="${edition.link}" target="_blank" rel="noopener" class="block bg-white rounded-2xl shadow-lg overflow-hidden card-hover group border-t-4 border-${edition.color}-500 h-full">
                 <div class="p-6 flex flex-col h-full">
                     <div>
                         <div class="flex justify-between items-start mb-3">
@@ -346,7 +344,6 @@ function renderPreviousEditions(editionsData) {
                             <span>${edition.date}</span>
                         </div>
                     </div>
-                    <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-gray-100">${tagsHTML}</div>
                 </div>
             </a>`;
         container.innerHTML += editionHTML;

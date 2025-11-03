@@ -46,16 +46,12 @@
                 <a href="#program" class="nav-link-desktop text-white font-medium hover:text-yellow-300 transition duration-200">Programação</a>
                 <a href="#competitions" class="nav-link-desktop text-white font-medium hover:text-yellow-300 transition duration-200">Competições</a>
                 <a href="#speakers" class="nav-link-desktop text-white font-medium hover:text-yellow-300 transition duration-200">Palestrantes</a>
-                <a href="#registration" class="bg-white text-blue-700 px-4 sm:px-6 py-2 rounded-full font-semibold shadow-lg hover:bg-blue-50 transition duration-200 flex items-center gap-2">
-                    <i class="fas fa-user-plus text-sm"></i>
-                    <span class="hidden sm:inline">Inscreva-se</span>
-                </a>
             </div>
 
             <!-- Mobile Menu Button -->
             <div class="md:hidden">
-                <button id="menu-btn" class="text-white text-2xl focus:outline-none" aria-label="Abrir menu" aria-expanded="false">
-                    <i class="fas fa-bars"></i>
+                <button id="menu-btn" class="text-white text-2xl focus:outline-none" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu-container">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
@@ -74,9 +70,6 @@
                 <a href="#program" class="nav-link-mobile text-white text-xl font-semibold py-3 border-b border-gray-700">Programação</a>
                 <a href="#competitions" class="nav-link-mobile text-white text-xl font-semibold py-3 border-b border-gray-700">Competições</a>
                 <a href="#speakers" class="nav-link-mobile text-white text-xl font-semibold py-3 border-b border-gray-700">Palestrantes</a>
-                <a href="#registration" class="nav-link-mobile mt-8 bg-yellow-400 text-blue-900 px-6 py-4 rounded-full font-bold text-lg text-center hover:bg-yellow-300 transition duration-200">
-                    Inscreva-se
-                </a>
             </div>
         </div>
     </div>
@@ -95,12 +88,12 @@
                     <p class="text-lg sm:text-xl mb-8 opacity-90 max-w-2xl mx-auto lg:mx-0 animate-fade-in-up" style="animation-delay: 0.6s;">Transição Sustentável: O Papel das Engenharias no Futuro das Organizações, Sociedade e Meio Ambiente</p>
                     
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up" style="animation-delay: 0.8s;">
-                        <a href="#registration" class="bg-yellow-400 text-blue-900 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg shadow-lg hover:bg-yellow-300 transition duration-200 flex items-center justify-center gap-2">
-                            <i class="fas fa-ticket-alt"></i>
-                            Garanta sua Vaga
+                        <a href="#!" class="bg-gray-400 text-gray-800 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg shadow-lg transition duration-200 flex items-center justify-center gap-2 cursor-not-allowed opacity-75 pointer-events-none">
+                            <i class="fas fa-ticket-alt" aria-hidden="true"></i>
+                            Garanta sua Vaga (Em Breve)
                         </a>
                         <a href="#program" class="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-white/10 transition duration-200 flex items-center justify-center gap-2">
-                            <i class="far fa-calendar-alt"></i>
+                            <i class="far fa-calendar-alt" aria-hidden="true"></i>
                             Ver Programação
                         </a>
                     </div>
@@ -188,14 +181,18 @@
                 
                 <!-- Program Content -->
                 <div class="lg:w-3/4">
-                    <!-- Day 1 -->
-                    <div id="day1" class="program-content space-y-6">
-                        <!-- Content will be loaded from JSON -->
-                    </div>
+                    <!-- Os cards da programação foram comentados e substituídos pela mensagem 'Em Breve' abaixo. -->
+                    <!-- <div id="day1" class="program-content space-y-6"> -->
+                        <!-- O conteúdo era carregado aqui via JSON -->
+                    <!-- </div> -->
                     
-                    <!-- Day 2 -->
-                    <div id="day2" class="program-content hidden space-y-6">
-                        <!-- Content will be loaded from JSON -->
+                    <!-- <div id="day2" class="program-content hidden space-y-6"> -->
+                        <!-- O conteúdo era carregado aqui via JSON -->
+                    <!-- </div> -->
+                    <div class="bg-white rounded-2xl shadow-lg p-8 text-center flex flex-col items-center justify-center h-full min-h-[300px]">
+                        <i class="far fa-clock text-5xl text-blue-500 mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Em Breve</h3>
+                        <p class="text-gray-600 text-lg">Nossa programação completa estará no ar em breve. Fique de olho!</p>
                     </div>
                 </div>
             </div>
@@ -226,31 +223,8 @@
                 <div class="w-24 h-1 gradient-bg rounded-full mx-auto mt-6"></div>
             </div>
 
-            <div id="previous-editions-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            <div id="previous-editions-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
                 <!-- Previous editions will be loaded from JSON -->
-            </div>
-
-            <!-- Statistics Section -->
-            <div class="mt-12 md:mt-16 bg-white rounded-2xl shadow-lg p-6 md:p-8 max-w-4xl mx-auto">
-                <h3 class="text-xl md:text-2xl font-bold text-center text-gray-800 mb-6 md:mb-8">Nossa Trajetória em Números</h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                    <div class="text-center">
-                        <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-600 mb-2">4+</div>
-                        <div class="text-gray-600 text-sm md:text-base">Edições Realizadas</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-green-600 mb-2">1000+</div>
-                        <div class="text-gray-600 text-sm md:text-base">Participantes</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-yellow-600 mb-2">50+</div>
-                        <div class="text-gray-600 text-sm md:text-base">Palestras</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-purple-600 mb-2">12</div>
-                        <div class="text-gray-600 text-sm md:text-base">Competições</div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -299,23 +273,23 @@
                     <h3 class="text-xl md:text-2xl font-bold mb-6 text-center">Datas Importantes</h3>
                     <div class="relative pl-8 space-y-6 border-l-2 border-yellow-300/50">
                         <div class="relative">
-                            <div class="absolute -left-11 top-1 w-6 h-6 bg-yellow-300 rounded-full flex items-center justify-center"><i class="fas fa-flag-checkered text-blue-900 text-xs"></i></div>
+                            <div class="absolute -left-11 top-1 w-6 h-6 bg-yellow-300 rounded-full flex items-center justify-center"><i class="fas fa-flag-checkered text-blue-900 text-xs" aria-hidden="true"></i></div>
                             <p class="font-bold">Encerramento das Inscrições</p>
                             <p class="text-sm opacity-80">23 de Novembro</p>
                         </div>
                         <div class="relative">
-                            <div class="absolute -left-11 top-1 w-6 h-6 bg-yellow-300 rounded-full flex items-center justify-center"><i class="fas fa-play text-blue-900 text-xs"></i></div>
+                            <div class="absolute -left-11 top-1 w-6 h-6 bg-yellow-300 rounded-full flex items-center justify-center"><i class="fas fa-play text-blue-900 text-xs" aria-hidden="true"></i></div>
                             <p class="font-bold">Início do Evento</p>
                             <p class="text-sm opacity-80">26 de Novembro</p>
                         </div>
                         <div class="relative">
-                            <div class="absolute -left-11 top-1 w-6 h-6 bg-yellow-300 rounded-full flex items-center justify-center"><i class="fas fa-stop text-blue-900 text-xs"></i></div>
+                            <div class="absolute -left-11 top-1 w-6 h-6 bg-yellow-300 rounded-full flex items-center justify-center"><i class="fas fa-stop text-blue-900 text-xs" aria-hidden="true"></i></div>
                             <p class="font-bold">Encerramento do Evento</p>
                             <p class="text-sm opacity-80">27 de Novembro</p>
                         </div>
                     </div>
 
-                    <a href="#" target="_blank" rel="noopener" class="mt-8 w-full block bg-yellow-400 text-blue-900 px-6 md:px-10 py-3 md:py-4 rounded-full font-bold text-lg md:text-xl shadow-lg hover:bg-yellow-300 transition duration-200 text-center">
+                    <a href="#!" target="_blank" rel="noopener noreferrer" class="mt-8 w-full block bg-yellow-400 text-blue-900 px-6 md:px-10 py-3 md:py-4 rounded-full font-bold text-lg md:text-xl shadow-lg hover:bg-yellow-300 transition duration-200 text-center">
                         Fazer Inscrição
                     </a>
                 </div>
@@ -335,7 +309,7 @@
                 <div class="flex flex-col items-center md:items-end text-center md:text-right">
                     <div class="flex gap-6 mb-4 justify-center md:justify-end">
                         <a href="https://www.instagram.com/secrateus" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition duration-200" aria-label="Instagram">
-                            <i class="fab fa-instagram text-2xl"></i>
+                            <i class="fab fa-instagram text-2xl" aria-hidden="true"></i>
                         </a>
                     </div>
                     <p class="text-gray-400 text-sm">© 2025 Semana das Engenharias. Todos os direitos reservados.</p>
@@ -349,8 +323,8 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="assets/js/particles-config.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+    <script src="assets/js/particles-config.js" defer></script>
     <script src="assets/js/script.js" defer></script>
 </body>
 </html>
