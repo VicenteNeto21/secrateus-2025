@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Jorge Gomes",
+    "title": "Engenheiro de Software Sênior na TechCorp",
+    "topic": "O Futuro da Inteligência Artificial na Engenharia Civil",
+    "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+    "linkedin": "#",
+    "color": "blue"
+  },
+  {
+    "name": "Mariana Lima",
+    "title": "Especialista em Geotecnia Ambiental",
+    "topic": "Inovações em Mineração Sustentável",
+    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80",
+    "linkedin": "#",
+    "color": "green"
+  },
+  {
+    "name": "Pedro Albuquerque",
+    "title": "CEO da Renovare Energia",
+    "topic": "Transição Energética: Desafios e Oportunidades",
+    "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80",
+    "linkedin": "#",
+    "color": "purple"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Pontes de Palito",
+    "image": "https://images.unsplash.com/photo-1581092919534-82c208394aa2?auto=format&fit=crop&w=800&q=80",
+    "prize": "R$ 150,00",
+    "description": "Teste suas habilidades de projeto construindo a ponte mais leve e resistente. O desafio é equilibrar capacidade de carga, peso, design e inovação usando apenas palitos e cola.",
+    "requirements": [
+      "Equipes de até 3 estudantes da UFC Crateús",
+      "Materiais: apenas palitos e cola (branca ou de madeira)",
+      "Avaliação baseada em resistência, peso, design e inovação"
+    ],
+    "date": "Inscrições até 23 de Novembro",
+    "editalLink": "https://drive.google.com/file/d/18k-2ZM2IHMaNIQd9eU_fBhZleYPsh42A/view?usp=drivesdk",
+    "color": "blue",
+    "registrationLink": "https://forms.gle/rjwrHHJWSibTHhyTA"
+  },
+  {
+    "title": "Jogos Mineiros",
+    "image": "https://images.unsplash.com/photo-1619533394339-0d205193354c?auto=format&fit=crop&w=800&q=80",
+    "prize": "R$ 150,00",
+    "description": "Organizado pela LARMI, este evento promove a integração e o aprendizado prático com provas de identificação de minerais, bateamento, uso de bússola e quizzes.",
+    "requirements": [
+      "Equipes de 5 participantes (máx. 3 veteranos)",
+      "Modalidades: Identificação de rochas, bateamento, prova da bússola e quizzes",
+      "Inscrições gratuitas e online"
+    ],
+    "date": "Inscrições até 23 de Novembro",
+    "editalLink": "https://drive.google.com/file/d/1C6RqXPVcttF3Z7Hh1tFFDrQqc15rofdR/view?usp=drivesdk",
+    "color": "green",
+    "registrationLink": "https://forms.gle/M5p1U75yA4jGhH1h8"
+  },
+  {
+    "title": "Competição de SimCity",
+    "image": "https://images.unsplash.com/photo-1519563552099-53f3c335d5d8?auto=format&fit=crop&w=800&q=80",
+    "prize": "R$ 150,00",
+    "description": "Uma experiência dinâmica sobre gestão ambiental e urbana. Estimule seu raciocínio técnico, estratégico e trabalho em equipe para criar a cidade mais sustentável.",
+    "requirements": [
+      "Equipes de até 5 alunos da UFC Crateús",
+      "Inscrições abertas para todos os cursos",
+      "Habilidades de liderança e comunicação"
+    ],
+    "date": "Inscrições até 23 de Novembro",
+    "editalLink": "https://drive.google.com/file/d/1R55P-_FVuNcaw5DvOX2mPtJKgfBOWLsa/view",
+    "color": "purple",
+    "registrationLink": "https://forms.gle/rjwrHHJWSibTHhyTA"
+  }
+]

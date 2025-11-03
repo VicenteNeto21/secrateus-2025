@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Semana das Engenharias 2025 | UFC Crateús</title>
+    <meta name="description" content="Participe da Semana das Engenharias 2025 da UFC Crateús. Tema: 'Transição Sustentável: O Papel das Engenharias no Futuro'. 26 e 27 de Novembro.">
+    <meta name="keywords" content="Semana das Engenharias, UFC Crateús, Engenharia Civil, Engenharia de Minas, Engenharia de Computação, Sustentabilidade, Inovação, Tecnologia">
+    <meta name="author" content="Vicente Neto">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon"> 
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://se.crateus.ufc.br">
+    <meta property="og:title" content="Semana das Engenharias 2025 | UFC Crateús">
+    <meta property="og:description" content="Transição Sustentável: O Papel das Engenharias no Futuro das Organizações, Sociedade e Meio Ambiente.">
+    <meta property="og:image" content="https://se.crateus.ufc.br/assets/img/tela.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://se.crateus.ufc.br">
+    <meta name="twitter:title" content="Semana das Engenharias 2025 | UFC Crateús">
+    <meta name="twitter:description" content="Transição Sustentável: O Papel das Engenharias no Futuro das Organizações, Sociedade e Meio Ambiente.">
+    <meta name="twitter:image" content="https://se.crateus.ufc.br/assets/img/tela.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4">
+        <div class="container mx-auto px-4 sm:px-6 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="assets/img/logo-navbar.png" alt="Logo Semana das Engenharias 2025" class="h-7 sm:h-8 brightness-0 invert">
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                <a href="#home" class="nav-link-desktop text-white font-medium hover:text-yellow-300 transition duration-200">Início</a>
+                <a href="#about" class="nav-link-desktop text-white font-medium hover:text-yellow-300 transition duration-200">Sobre</a>
+                <a href="#program" class="nav-link-desktop text-white font-medium hover:text-yellow-300 transition duration-200">Programação</a>
+                <a href="#competitions" class="nav-link-desktop text-white font-medium hover:text-yellow-300 transition duration-200">Competições</a>
+                <a href="#speakers" class="nav-link-desktop text-white font-medium hover:text-yellow-300 transition duration-200">Palestrantes</a>
+                <a href="#registration" class="bg-white text-blue-700 px-4 sm:px-6 py-2 rounded-full font-semibold shadow-lg hover:bg-blue-50 transition duration-200 flex items-center gap-2">
+                    <i class="fas fa-user-plus text-sm"></i>
+                    <span class="hidden sm:inline">Inscreva-se</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-white text-2xl focus:outline-none" aria-label="Abrir menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu-container" class="mobile-menu-container md:hidden fixed inset-0 z-50">
+        <!-- Overlay -->
+        <div id="menu-overlay" class="mobile-overlay absolute inset-0 bg-black/60"></div>
+
+        <!-- Sidebar Menu -->
+        <div id="mobile-menu" class="mobile-menu absolute top-0 right-0 h-full w-4/5 max-w-xs bg-gray-900 shadow-2xl">
+            <div class="flex flex-col p-6 pt-24 space-y-4">
+                <a href="#home" class="nav-link-mobile text-white text-xl font-semibold py-3 border-b border-gray-700">Início</a>
+                <a href="#about" class="nav-link-mobile text-white text-xl font-semibold py-3 border-b border-gray-700">Sobre</a>
+                <a href="#program" class="nav-link-mobile text-white text-xl font-semibold py-3 border-b border-gray-700">Programação</a>
+                <a href="#competitions" class="nav-link-mobile text-white text-xl font-semibold py-3 border-b border-gray-700">Competições</a>
+                <a href="#speakers" class="nav-link-mobile text-white text-xl font-semibold py-3 border-b border-gray-700">Palestrantes</a>
+                <a href="#registration" class="nav-link-mobile mt-8 bg-yellow-400 text-blue-900 px-6 py-4 rounded-full font-bold text-lg text-center hover:bg-yellow-300 transition duration-200">
+                    Inscreva-se
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white pt-24 pb-16 md:pb-20 relative overflow-hidden">
+        <div id="particles-js" class="absolute inset-0 z-0"></div>
+        
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-3/5 mb-8 lg:mb-0 text-center lg:text-left">
+                    <div class="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-6 animate-fade-in" style="animation-delay: 0.2s;">
+                        26 e 27 de Novembro de 2025
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight animate-fade-in-up" style="animation-delay: 0.4s;">Semana das <span class="text-yellow-300">Engenharias</span> 2025</h1>
+                    <p class="text-lg sm:text-xl mb-8 opacity-90 max-w-2xl mx-auto lg:mx-0 animate-fade-in-up" style="animation-delay: 0.6s;">Transição Sustentável: O Papel das Engenharias no Futuro das Organizações, Sociedade e Meio Ambiente</p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up" style="animation-delay: 0.8s;">
+                        <a href="#registration" class="bg-yellow-400 text-blue-900 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg shadow-lg hover:bg-yellow-300 transition duration-200 flex items-center justify-center gap-2">
+                            <i class="fas fa-ticket-alt"></i>
+                            Garanta sua Vaga
+                        </a>
+                        <a href="#program" class="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-white/10 transition duration-200 flex items-center justify-center gap-2">
+                            <i class="far fa-calendar-alt"></i>
+                            Ver Programação
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="lg:w-2/5 flex justify-center mt-8 lg:mt-0">
+                    <div class="relative">
+                        <div class="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 gradient-bg rounded-2xl shadow-2xl flex items-center justify-center animate-float p-2 animate-fade-in" style="animation-delay: 1s;">
+                            <img src="assets/img/logo.jpg" alt="Logo Semana das Engenharias" class="w-full h-auto rounded-xl">
+                        </div>
+                        
+                        <div class="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 bg-yellow-400 text-blue-900 px-4 py-2 sm:px-6 sm:py-3 rounded-xl shadow-lg font-bold animate-fade-in" style="animation-delay: 1.2s;">
+                            <div id="countdown" class="text-center">
+                                <div class="text-xs sm:text-sm">FALTAM</div>
+                                <div class="text-xl sm:text-2xl">27 dias</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6">Sobre o Evento</h2>
+                <div class="w-24 h-1 gradient-bg rounded-full mx-auto"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Transição Sustentável: O Coração do Nosso Evento</h3>
+                <p class="text-lg text-gray-600">A Semana das Engenharias 2025 tem como tema central a "Transição Sustentável", explorando o papel fundamental das engenharias na construção de um futuro mais equilibrado para organizações, sociedade e meio ambiente.</p>
+            </div>
+
+            <div id="about-cards-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+                <!-- About cards will be loaded from JSON -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Section -->
+    <section id="program" class="py-16 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6">Programação</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Confira a programação completa dos dois dias de evento com palestras, workshops e competições.</p>
+                <div class="w-24 h-1 gradient-bg rounded-full mx-auto mt-6"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-6 md:gap-8">
+                <!-- Day Selector -->
+                <div class="lg:w-1/4">
+                    <div class="bg-white rounded-2xl shadow-lg p-6 sticky top-24">
+                        <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-4">Selecione o Dia</h3>
+                        <div class="space-y-3">
+                            <button class="program-day active w-full text-left p-4 rounded-xl font-semibold transition duration-200" data-day="day1" aria-pressed="true">
+                                26 de Novembro
+                            </button>
+                            <button class="program-day w-full text-left p-4 rounded-xl font-semibold transition duration-200" data-day="day2" aria-pressed="false">
+                                27 de Novembro
+                            </button>
+                        </div>
+                        
+                        <div class="mt-6 pt-6 border-t border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-3">Legenda</h4>
+                            <div id="program-legend" class="space-y-2">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+                                    <span class="text-sm text-gray-600">Palestra</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                    <span class="text-sm text-gray-600">Workshop</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                    <span class="text-sm text-gray-600">Competição</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Program Content -->
+                <div class="lg:w-3/4">
+                    <!-- Day 1 -->
+                    <div id="day1" class="program-content space-y-6">
+                        <!-- Content will be loaded from JSON -->
+                    </div>
+                    
+                    <!-- Day 2 -->
+                    <div id="day2" class="program-content hidden space-y-6">
+                        <!-- Content will be loaded from JSON -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitions Section -->
+    <section id="competitions" class="py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6">Competições</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Participe das nossas competições e concorra a prêmios em dinheiro! Inscrições até 23 de novembro.</p>
+                <div class="w-24 h-1 gradient-bg rounded-full mx-auto mt-6"></div>
+            </div>
+            
+            <div id="competitions-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
+                <!-- Competitions will be loaded from JSON -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Previous Editions Section -->
+    <section id="previous-editions" class="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6">Edições Anteriores</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Reviva os momentos marcantes das últimas edições da Semana das Engenharias.</p>
+                <div class="w-24 h-1 gradient-bg rounded-full mx-auto mt-6"></div>
+            </div>
+
+            <div id="previous-editions-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+                <!-- Previous editions will be loaded from JSON -->
+            </div>
+
+            <!-- Statistics Section -->
+            <div class="mt-12 md:mt-16 bg-white rounded-2xl shadow-lg p-6 md:p-8 max-w-4xl mx-auto">
+                <h3 class="text-xl md:text-2xl font-bold text-center text-gray-800 mb-6 md:mb-8">Nossa Trajetória em Números</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <div class="text-center">
+                        <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-600 mb-2">4+</div>
+                        <div class="text-gray-600 text-sm md:text-base">Edições Realizadas</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-green-600 mb-2">1000+</div>
+                        <div class="text-gray-600 text-sm md:text-base">Participantes</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-yellow-600 mb-2">50+</div>
+                        <div class="text-gray-600 text-sm md:text-base">Palestras</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-purple-600 mb-2">12</div>
+                        <div class="text-gray-600 text-sm md:text-base">Competições</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <!-- <section id="speakers" class="py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6">Palestrantes Confirmados</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Conheça os especialistas que compartilharão seus conhecimentos e experiências na Semana das Engenharias 2025.</p>
+                <div class="w-24 h-1 gradient-bg rounded-full mx-auto mt-6"></div>
+            </div>
+            
+            <div id="speakers-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Sponsors Section -->
+    <!-- <section id="sponsors" class="py-16 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6">Patrocinadores</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Agradecemos aos nossos patrocinadores pelo apoio à Semana das Engenharias 2025.</p>
+                <div class="w-24 h-1 gradient-bg rounded-full mx-auto mt-6"></div>
+            </div>
+            
+            <div id="sponsors-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
+
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Registration Section -->
+    <section id="registration" class="py-16 md:py-20 gradient-bg text-white">
+        <div class="container mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center gap-10 md:gap-16">
+            <!-- Left Column: Text -->
+            <div class="lg:w-1/2 text-center lg:text-left">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">Não Fique de Fora!</h2>
+                <p class="text-lg md:text-xl opacity-90 max-w-xl mx-auto lg:mx-0">Garanta sua participação na Semana das Engenharias 2025. As vagas são limitadas e as inscrições são gratuitas. Participe, aprenda e conecte-se!</p>
+            </div>
+
+            <!-- Right Column: Registration Card -->
+            <div class="lg:w-1/2 w-full max-w-md">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-2xl">
+                    <h3 class="text-xl md:text-2xl font-bold mb-6 text-center">Datas Importantes</h3>
+                    <div class="relative pl-8 space-y-6 border-l-2 border-yellow-300/50">
+                        <div class="relative">
+                            <div class="absolute -left-11 top-1 w-6 h-6 bg-yellow-300 rounded-full flex items-center justify-center"><i class="fas fa-flag-checkered text-blue-900 text-xs"></i></div>
+                            <p class="font-bold">Encerramento das Inscrições</p>
+                            <p class="text-sm opacity-80">23 de Novembro</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-11 top-1 w-6 h-6 bg-yellow-300 rounded-full flex items-center justify-center"><i class="fas fa-play text-blue-900 text-xs"></i></div>
+                            <p class="font-bold">Início do Evento</p>
+                            <p class="text-sm opacity-80">26 de Novembro</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-11 top-1 w-6 h-6 bg-yellow-300 rounded-full flex items-center justify-center"><i class="fas fa-stop text-blue-900 text-xs"></i></div>
+                            <p class="font-bold">Encerramento do Evento</p>
+                            <p class="text-sm opacity-80">27 de Novembro</p>
+                        </div>
+                    </div>
+
+                    <a href="#" target="_blank" rel="noopener" class="mt-8 w-full block bg-yellow-400 text-blue-900 px-6 md:px-10 py-3 md:py-4 rounded-full font-bold text-lg md:text-xl shadow-lg hover:bg-yellow-300 transition duration-200 text-center">
+                        Fazer Inscrição
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0 text-center md:text-left flex flex-col items-center md:items-start">
+                    <img src="assets/img/logo-navbar.png" alt="Logo Semana das Engenharias 2025" class="h-8 brightness-0 invert mb-4">
+                    <p class="text-gray-400">Semana das Engenharias - UFC Crateús</p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-end text-center md:text-right">
+                    <div class="flex gap-6 mb-4 justify-center md:justify-end">
+                        <a href="https://www.instagram.com/secrateus" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition duration-200" aria-label="Instagram">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">© 2025 Semana das Engenharias. Todos os direitos reservados.</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>Universidade Federal do Ceará - Campus de Crateús</p>
+                <p class="mt-2">Avenida Professora Machadinha Lima, S/N, Príncipe Imperial, Crateús-CE, CEP 63708-825</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="assets/js/particles-config.js"></script>
+    <script src="assets/js/script.js" defer></script>
+</body>
+</html>

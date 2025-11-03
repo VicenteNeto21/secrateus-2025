@@ -1,0 +1,54 @@
+[
+    {
+        "day": 1,
+        "startTime": "08:30",
+        "endTime": "12:00",
+        "type": "Competição",
+        "title": "Competição de Pontes de Palito",
+        "description": "Construção e teste de carga com palitos e cola quente. Os participantes terão a oportunidade de aplicar conceitos de engenharia estrutural em um desafio prático.",
+        "speaker": "Prof. Ana Silva",
+        "location": "Laboratório de Engenharia Civil",
+        "prize": "R$ 150,00",
+        "registration": false,
+        "color": "blue"
+    },
+    {
+        "day": 1,
+        "startTime": "14:00",
+        "endTime": "16:00",
+        "type": "Palestra",
+        "title": "Sustentabilidade na Construção",
+        "description": "Materiais ecológicos e eficiência energética. Abordagem sobre as novas tendências em construção sustentável e como implementá-las em projetos reais.",
+        "speaker": "Eng. João Mendes",
+        "location": "Auditório Principal",
+        "prize": null,
+        "registration": false,
+        "color": "green"
+    },
+    {
+        "day": 2,
+        "startTime": "09:00",
+        "endTime": "12:00",
+        "type": "Competição",
+        "title": "Jogos Mineiros",
+        "description": "Desafios criativos com blocos e lógica. Os participantes utilizarão conceitos de programação e engenharia para resolver problemas complexos de forma lúdica.",
+        "speaker": "Prof. Mariana Lima",
+        "location": "Laboratório de Informática",
+        "prize": "R$ 150,00",
+        "registration": true,
+        "color": "blue"
+    },
+    {
+        "day": 2,
+        "startTime": "15:30",
+        "endTime": "17:30",
+        "type": "Palestra",
+        "title": "Energia Renovável",
+        "description": "Painéis solares e eólica no semiárido. Discussão sobre as oportunidades e desafios da implementação de energias renováveis em regiões de clima semiárido.",
+        "speaker": "Eng. Pedro Albuquerque",
+        "location": "Auditório Principal",
+        "prize": null,
+        "registration": false,
+        "color": "green"
+    }
+]

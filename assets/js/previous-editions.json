@@ -1,0 +1,26 @@
+[
+  {
+    "year": "2024",
+    "title": "Inovação e Tecnologia",
+    "date": "21-22 de Novembro",
+    "tags": ["Robótica", "IoT", "IA"],
+    "color": "blue",
+    "link": "#"
+  },
+  {
+    "year": "2023",
+    "title": "Engenharia Sustentável",
+    "date": "22-23 de Novembro",
+    "tags": ["Sustentabilidade", "Energia Solar", "Ecoinovação"],
+    "color": "green",
+    "link": "#"
+  },
+  {
+    "year": "2022",
+    "title": "O Futuro da Construção",
+    "date": "23-24 de Novembro",
+    "tags": ["Construção Civil", "BIM", "Materiais"],
+    "color": "purple",
+    "link": "#"
+  }
+]
