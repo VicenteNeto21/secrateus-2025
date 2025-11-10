@@ -222,11 +222,8 @@ function renderProgram(programData) {
 
     programData.forEach(event => {
         const registrationHTML = event.registration ?
-            `<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                <div class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-bold">
-                    <i class="fas fa-trophy mr-1"></i> Prêmio: ${event.prize}
-                </div>
-                <a href="#registration" class="bg-${event.color}-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-${event.color}-600 transition duration-200 whitespace-nowrap">Inscrever-se</a>
+            `<div class="mt-4">
+                <span class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-lg font-medium"><i class="fas fa-trophy mr-2"></i>Prêmio: ${event.prize}</span>
             </div>` :
             `<div class="mt-4">
                 <span class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium">Entrada Livre</span>

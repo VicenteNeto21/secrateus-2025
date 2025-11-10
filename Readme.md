@@ -1,14 +1,14 @@
 # Semana das Engenharias 2025 - Landing Page Dinâmica
 
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
 Este repositório contém o código-fonte da landing page oficial do evento "Semana das Engenharias 2025", realizado pela Universidade Federal do Ceará (UFC) - Campus Crateús.
 
 O tema para o evento de 2025 é: **"Transição Sustentável: O Papel das Engenharias no Futuro das Organizações, Sociedade e Meio Ambiente"**.
 
-![Uma captura de tela da seção principal do site](https://github.com/VicenteNeto21/secrateus-2025/blob/main/assets/img/tela.PNG?raw=true)
+![Captura de tela da página inicial do evento](https://github.com/VicenteNeto21/secrateus-2025/blob/main/assets/img/tela.PNG?raw=true)
 
 ## ✨ Funcionalidades
 
@@ -16,11 +16,9 @@ O tema para o evento de 2025 é: **"Transição Sustentável: O Papel das Engenh
 *   **Conteúdo Dinâmico com JSON**: Facilidade para atualizar seções como Programação, Competições e Notícias sem tocar no HTML.
 *   **Fundo Interativo**: Efeito de partículas na seção principal para uma atmosfera tecnológica.
 *   **Contador Regressivo**: Mostra dinamicamente os dias restantes para o evento.
-*   **Programação Interativa**: Usuários podem alternar facilmente entre os dias do evento para ver a programação.
-*   **Carrossel de Notícias**: Navegação por toque ou botões para visualizar os últimos anúncios.
+*   **Programação Interativa**: Usuários podem alternar facilmente entre os dias do evento, com uma legenda de cores gerada dinamicamente.
 *   **Rolagem Suave**: Navegação limpa entre as seções.
 *   **Barra de Navegação Dinâmica**: A barra de navegação muda de aparência durante a rolagem para uma melhor experiência do usuário.
-*   **UI/UX Moderno**: Construído com Tailwind CSS para um visual limpo e moderno, com efeitos de hover e animações sutis.
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -31,7 +29,25 @@ O tema para o evento de 2025 é: **"Transição Sustentável: O Papel das Engenh
 *   **Font Awesome**: Para os ícones (via CDN).
 *   **Particles.js**: Para o fundo animado da seção principal.
 
-## 🚀 Como Começar
+## 📂 Estrutura do Projeto
+
+O projeto é organizado de forma a separar a estrutura (HTML), a lógica (JS) e os dados (JSON), facilitando a manutenção.
+
+```
+secrateus-2025/
+├── assets/
+│   ├── css/
+│   │   └── style.css         # Estilos personalizados e variáveis de cor
+│   ├── img/                  # Imagens, logos e favicons
+│   └── js/
+│       ├── script.js         # Lógica principal da aplicação (carregamento de dados, interações)
+│       ├── particles-config.js # Configuração do fundo animado
+│       └── *.json            # Arquivos de dados (programação, competições, etc.)
+├── index.html                # Arquivo principal da página
+└── README.md                 # Este arquivo
+```
+
+##  Como Começar
 
 Como este é um site estático sem processo de build, você pode executá-lo localmente com muita facilidade.
 
@@ -52,32 +68,27 @@ Como este é um site estático sem processo de build, você pode executá-lo loc
 
 ## 🔧 Customização
 
-A maior parte do conteúdo do site é carregada dinamicamente a partir de arquivos `.json` localizados na pasta `assets/js/`. Isso torna a atualização do site muito mais simples.
+A maior parte do conteúdo do site é carregada dinamicamente a partir de arquivos `.json` localizados na pasta `assets/js/`. Isso torna a atualização do site muito mais simples e segura, pois não é necessário editar o HTML.
 
-*   **Data do Evento e Contador**:
-    *   Para alterar a data do evento, abra o arquivo `assets/js/script.js` e procure pela função `updateCountdown`.
-    *   Modifique a string da data na linha: `const eventDate = new Date('2025-11-26T00:00:00');`
+#### Dados do Evento (JSON)
 
-*   **Programação, Competições, Novidades, etc.**:
-    *   **Programação**: Edite o arquivo `assets/js/program.json`.
-    *   **Competições**: Edite o arquivo `assets/js/competitions.json`.
-    *   **Edições Anteriores**: Edite o arquivo `assets/js/previous-editions.json`.
-    *   **Novidades**: Edite o arquivo `assets/js/news.json`.
-    *   **Detalhes do "Sobre"**: Edite o arquivo `assets/js/about.json`.
-    *   **Patrocinadores**: Edite o arquivo `assets/js/sponsors.json` e adicione os logos na pasta `assets/img/sponsors/`.
+*   **Programação**: Edite `assets/js/program.json` para adicionar ou modificar palestras, minicursos e outros eventos. A legenda de cores é gerada automaticamente a partir dos tipos e cores definidos aqui.
+*   **Competições**: Edite `assets/js/competitions.json` para detalhar as competições, incluindo prêmios, requisitos e links para editais.
+*   **Palestrantes**: Edite `assets/js/speakers.json` para exibir os perfis dos palestrantes.
+*   **Edições Anteriores**: Edite `assets/js/previous-editions.json` para manter o histórico do evento.
+*   **Patrocinadores**: Adicione novos patrocinadores em `assets/js/sponsors.json` e inclua seus logos na pasta `assets/img/sponsors/`.
+*   **Cards "Sobre"**: Modifique os cards da seção "Sobre" em `assets/js/about.json`.
 
-*   **Link de Inscrição**:
-    *   No arquivo `index.html`, encontre a `<section id="registration">`.
-    *   Atualize o atributo `href` do botão principal de inscrição: `<a href="#" ...>`.
+#### Configurações Gerais
 
-*   **Cores e Fontes**:
-    *   As cores primárias são definidas como variáveis CSS no arquivo `assets/css/style.css`. Você pode alterá-las lá para re-tematizar o site rapidamente.
-    ```css
-    :root {
-        --primary-blue: #1e40af;
-        --primary-green: #059669;
-    }
+*   **Data do Evento (Contador)**: Para alterar a data final do contador regressivo, edite a função `updateCountdown` no arquivo `assets/js/script.js`:
+    ```javascript
+    const eventDate = new Date('2025-11-26T00:00:00');
     ```
+
+*   **Links de Inscrição**: Os links principais de inscrição podem ser atualizados diretamente no `index.html`, na seção `<section id="registration">`.
+
+*   **Cores e Estilos**: As cores principais e outros estilos globais podem ser ajustados no arquivo `assets/css/style.css`.
 
 ## 📄 Licença
 
