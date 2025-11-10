@@ -266,7 +266,7 @@ function renderProgram(programData) {
 
 // Countdown timer
 function updateCountdown() {
-    const eventDate = new Date('2025-11-26T00:00:00');
+    const eventDate = new Date('2025-11-26T08:00:00');
     const now = new Date();
     const diff = eventDate - now;
     
