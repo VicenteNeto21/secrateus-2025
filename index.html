@@ -30,6 +30,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Estilos para os filtros da galeria */
+        .gallery-day-filter {
+            background-color: #fff;
+            color: #4b5563; /* text-gray-600 */
+            border: 1px solid #d1d5db; /* border-gray-300 */
+        }
+        .gallery-day-filter:hover {
+            background-color: #f3f4f6; /* bg-gray-100 */
+        }
+        .gallery-day-filter.active {
+            background-color: #1e3a8a; /* bg-blue-900 */
+            color: #fff;
+            border-color: #1e3a8a; /* border-blue-900 */
+        }
+        /* Animação de fade-in para as imagens da galeria */
+        .gallery-item {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+    </style>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
@@ -45,6 +66,7 @@
                 <a href="#about" class="nav-link-desktop text-white font-medium hover:text-yellow-300 transition duration-200">Sobre</a>
                 <a href="#program" class="nav-link-desktop text-white font-medium hover:text-yellow-300 transition duration-200">Programação</a>
                 <a href="#competitions" class="nav-link-desktop text-white font-medium hover:text-yellow-300 transition duration-200">Competições</a>
+                <a href="#gallery" class="nav-link-desktop text-white font-medium hover:text-yellow-300 transition duration-200">Galeria</a>
                 <!-- <a href="#speakers" class="nav-link-desktop text-white font-medium hover:text-yellow-300 transition duration-200">Palestrantes</a> -->
                 <a href="#previous-editions" class="nav-link-desktop text-white font-medium hover:text-yellow-300 transition duration-200">Edições Anteriores</a>
             </div>
@@ -70,6 +92,7 @@
                 <a href="#about" class="nav-link-mobile text-white text-xl font-semibold py-3 border-b border-gray-700">Sobre</a>
                 <a href="#program" class="nav-link-mobile text-white text-xl font-semibold py-3 border-b border-gray-700">Programação</a>
                 <a href="#competitions" class="nav-link-mobile text-white text-xl font-semibold py-3 border-b border-gray-700">Competições</a>
+                <a href="#gallery" class="nav-link-mobile text-white text-xl font-semibold py-3 border-b border-gray-700">Galeria</a>
                 <!-- <a href="#speakers" class="nav-link-mobile text-white text-xl font-semibold py-3 border-b border-gray-700">Palestrantes</a> -->
                 <a href="#previous-editions" class="nav-link-desktop text-white font-medium hover:text-yellow-300 transition duration-200">Edições Anteriores</a>
 
@@ -91,7 +114,7 @@
                     <p class="text-lg sm:text-xl mb-8 opacity-90 max-w-2xl mx-auto lg:mx-0 animate-fade-in-up" style="animation-delay: 0.6s;">Transição Sustentável: O Papel das Engenharias no Futuro das Organizações, Sociedade e Meio Ambiente</p>
                     
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up" style="animation-delay: 0.8s;">
-                        <a href="https://sistemas.crateus.ufc.br/eventos/evento/788 " class="bg-gray-400 text-gray-800 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg shadow-lg transition duration-200 flex items-center justify-center gap-2 cursor-not-allowed opacity-75 pointer-events-none">
+                        <a href="https://sistemas.crateus.ufc.br/eventos/evento/788" class="bg-yellow-400 text-blue-900 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg shadow-lg transition duration-200 flex items-center justify-center gap-2">
                             <i class="fas fa-ticket-alt" aria-hidden="true"></i>
                             Garanta sua Vaga
                         </a>
@@ -216,6 +239,33 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6">Galeria de Fotos</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Relembre os melhores momentos das edições passadas da Semana das Engenharias.</p>
+                <div class="w-24 h-1 gradient-bg rounded-full mx-auto mt-6"></div>
+            </div>
+            
+            <!-- Gallery Day Filter -->
+            <div id="gallery-filter" class="flex justify-center md:justify-end gap-2 mb-8">
+                <button class="gallery-day-filter active px-6 py-2 rounded-full font-semibold transition duration-200" data-day="all">Todos</button>
+                <button class="gallery-day-filter px-6 py-2 rounded-full font-semibold transition duration-200" data-day="26">Dia 26</button>
+                <button class="gallery-day-filter px-6 py-2 rounded-full font-semibold transition duration-200" data-day="27">Dia 27</button>
+            </div>
+            
+            <div id="gallery-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Imagens da galeria serão carregadas aqui via JSON -->
+            </div>
+            <div id="gallery-load-more-container" class="text-center mt-8 md:mt-12 hidden">
+                <button id="load-more-gallery" class="bg-blue-800 text-white px-8 py-3 rounded-full font-bold text-base shadow-lg transition duration-200 hover:bg-blue-900">
+                    Carregar Mais
+                </button>
+            </div>
+        </div>
+    </section>
+
     <!-- Previous Editions Section -->
     <section id="previous-editions" class="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div class="container mx-auto px-4 sm:px-6">
@@ -291,7 +341,7 @@
                         </div>
                     </div>
 
-                    <a href="#!" target="_blank" rel="noopener noreferrer" class="mt-8 w-full block bg-yellow-400 text-blue-900 px-6 md:px-10 py-3 md:py-4 rounded-full font-bold text-lg md:text-xl shadow-lg hover:bg-yellow-300 transition duration-200 text-center">
+                    <a href="https://sistemas.crateus.ufc.br/eventos/evento/788" target="_blank" rel="noopener noreferrer" class="mt-8 w-full block bg-yellow-400 text-blue-900 px-6 md:px-10 py-3 md:py-4 rounded-full font-bold text-lg md:text-xl shadow-lg hover:bg-yellow-300 transition duration-200 text-center">
                         Fazer Inscrição
                     </a>
                 </div>
@@ -325,7 +375,23 @@
         </div>
     </footer>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-[100] hidden p-4">
+        <div class="relative max-w-4xl max-h-full flex flex-col gap-4">
+            <img id="lightbox-img" src="" alt="Imagem em tela cheia" class="object-contain max-w-full max-h-[85vh] rounded-lg">
+            <div class="flex justify-center gap-4">
+                 <a id="lightbox-download" href="" download class="bg-yellow-400 text-blue-900 px-6 py-2 rounded-full font-bold text-base shadow-lg transition duration-200 hover:bg-yellow-300 flex items-center justify-center gap-2">
+                    <i class="fas fa-download"></i> Baixar
+                </a>
+            </div>
+            <button id="lightbox-close" class="absolute -top-4 -right-4 md:top-0 md:-right-12 text-white text-3xl font-bold bg-black/30 rounded-full w-10 h-10 flex items-center justify-center" aria-label="Fechar imagem">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/heic2any/dist/heic2any.min.js" defer></script>
     <script src="assets/js/particles-config.js" defer></script>
     <script src="assets/js/script.js" defer></script>
 </body>

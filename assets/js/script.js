@@ -487,17 +487,142 @@ async function loadAndRender(url, renderFn, containerId, errorMsg) {
     }
 }
 
+// --- Gallery with "Load More" ---
+let allGalleryImages = [];
+let filteredGalleryImages = [];
+let currentImageCount = 0;
+const imagesPerLoad = 8; // Quantidade de imagens a serem carregadas inicialmente e a cada clique
+
+function renderGallery(initialLoad = false) {
+    const container = document.getElementById('gallery-container');
+    const loadMoreContainer = document.getElementById('gallery-load-more-container');
+    if (!container || !loadMoreContainer) return;
+
+    if (initialLoad) {
+        container.innerHTML = '';
+        currentImageCount = 0;
+    }
+
+    const imagesToRender = filteredGalleryImages.slice(currentImageCount, currentImageCount + imagesPerLoad);
+
+    imagesToRender.forEach(item => {
+        const galleryItemHTML = `
+            <div class="gallery-item group relative overflow-hidden rounded-xl cursor-pointer aspect-square bg-white p-1.5 border border-gray-200 shadow-sm hover:shadow-xl transition-shadow duration-300 ${item.span || ''}" data-src="${item.src}">
+                <img src="${item.src}" alt="${item.alt}" class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110">
+            </div>
+        `;
+        container.insertAdjacentHTML('beforeend', galleryItemHTML);
+    });
+
+    currentImageCount += imagesToRender.length;
+
+    // Mostra ou esconde o botão "Carregar Mais"
+    if (currentImageCount < filteredGalleryImages.length) {
+        loadMoreContainer.classList.remove('hidden');
+    } else {
+        loadMoreContainer.classList.add('hidden');
+    }
+
+    initializeLightbox(); // Re-inicializa os eventos do lightbox para as novas imagens
+}
+
+function setupGallery(galleryData) {
+    allGalleryImages = galleryData;
+    filteredGalleryImages = [...allGalleryImages]; // Começa mostrando todas
+    renderGallery(true); // Carga inicial com todas as imagens
+
+    // Configura os botões de filtro
+    const filterButtons = document.querySelectorAll('.gallery-day-filter');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Atualiza o estado ativo do botão
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const day = button.getAttribute('data-day');
+            if (day === 'all') {
+                filteredGalleryImages = [...allGalleryImages];
+            } else {
+                filteredGalleryImages = allGalleryImages.filter(img => img.day == day);
+            }
+
+            // Re-renderiza a galeria com as imagens filtradas
+            renderGallery(true);
+        });
+    });
+}
+
+function initializeLightbox() {
+    const galleryContainer = document.getElementById('gallery-container');
+    if (!galleryContainer) return;
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxDownload = document.getElementById('lightbox-download');
+    const galleryItems = galleryContainer.querySelectorAll('.group');
+
+    // Função de download direto
+    const downloadImage = (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // Impede que o clique feche o lightbox
+        fetch(e.target.href)
+            .then(resp => resp.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = e.target.href.split('/').pop(); // Extrai o nome do arquivo da URL
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                a.remove();
+            })
+            .catch(() => alert('Não foi possível baixar a imagem.'));
+    };
+
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const src = item.getAttribute('data-src');
+            lightbox.classList.remove('hidden');
+            lightboxImg.src = src;
+            lightboxDownload.href = src;
+            // Remove o listener antigo e adiciona o novo para evitar múltiplos downloads
+            lightboxDownload.removeEventListener('click', downloadImage);
+            lightboxDownload.addEventListener('click', downloadImage);
+        });
+    });
+
+    const closeLightbox = (e) => {
+        // Close only if the click is on the background or the close button
+        if (e.target === lightbox || e.target.closest('#lightbox-close')) {
+            lightbox.classList.add('hidden');
+        }
+    };
+
+    lightbox.addEventListener('click', closeLightbox);
+}
+
 function initializeApp() {
     updateCountdown();
 
-    Promise.all([
+    // Carrega todos os dados JSON em paralelo
+    Promise.allSettled([
         loadAndRender('assets/js/competitions.json', renderCompetitions, 'competitions-container', 'Não foi possível carregar as competições.'),
         loadAndRender('assets/js/program.json', renderProgram, 'day1', 'Não foi possível carregar a programação.'),
         loadAndRender('assets/js/previous-editions.json', renderPreviousEditions, 'previous-editions-container', 'Não foi possível carregar as edições anteriores.'),
         loadAndRender('assets/js/speakers.json', renderSpeakers, 'speakers-container', 'Não foi possível carregar os palestrantes.'),
         loadAndRender('assets/js/sponsors.json', renderSponsors, 'sponsors-container', 'Não foi possível carregar os patrocinadores.'),
-        loadAndRender('assets/js/about.json', renderAboutCards, 'about-cards-container', 'Não foi possível carregar os detalhes do evento.')
+        loadAndRender('assets/js/about.json', renderAboutCards, 'about-cards-container', 'Não foi possível carregar os detalhes do evento.'),
+        loadAndRender('assets/js/gallery.json', setupGallery, 'gallery-container', 'Não foi possível carregar a galeria de fotos.')
     ]);
+
+    // Configura o botão "Carregar Mais" da galeria
+    const loadMoreButton = document.getElementById('load-more-gallery');
+    if (loadMoreButton) {
+        loadMoreButton.addEventListener('click', () => renderGallery(false));
+    }
 }
 
 // Initialize the page
