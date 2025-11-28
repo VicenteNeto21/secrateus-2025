@@ -239,7 +239,9 @@ function renderProgram(programData) {
                     </div>
                     <div class="md:w-2/3 p-6">
                         <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-3">${event.title}</h3>
-                        <p class="text-gray-600 mb-4">${event.description}</p>
+                        ${event.description && event.description !== 'sem descrição' ? 
+                            `<p class="text-gray-600 mb-4">${event.description}</p>` : ''
+                        }
                         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-4 mb-4">
                             <div class="flex items-center gap-2">
                                 <i class="fas fa-user text-${event.color}-500"></i>
