@@ -151,8 +151,8 @@ function updateCountdown() {
 
     if (diff <= 0) {
         countdownElement.innerHTML = `
-            <div class="text-xs sm:text-sm">O EVENTO</div>
-            <div class="text-xl sm:text-2xl">COMEÇOU!</div>
+            <div class="text-xs sm:text-sm">OBRIGADO!</div>
+            <div class="text-lg sm:text-xl">Até 2026</div>
         `;
         return;
     }
