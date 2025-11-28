@@ -15,8 +15,14 @@ O tema para o evento de 2025 é: **"Transição Sustentável: O Papel das Engenh
 *   **Design Totalmente Responsivo**: Visualização otimizada para desktops, tablets e dispositivos móveis.
 *   **Conteúdo Dinâmico com JSON**: Facilidade para atualizar seções como Programação, Competições e Notícias sem tocar no HTML.
 *   **Fundo Interativo**: Efeito de partículas na seção principal para uma atmosfera tecnológica.
-*   **Contador Regressivo**: Mostra dinamicamente os dias restantes para o evento.
+*   **Contador Regressivo Inteligente**: Mostra dinamicamente os dias restantes para o evento e, após o término, exibe mensagem de agradecimento com "Até 2026".
 *   **Programação Interativa**: Usuários podem alternar facilmente entre os dias do evento, com uma legenda de cores gerada dinamicamente.
+*   **Galeria de Fotos com Paginação**: Sistema completo de galeria com:
+    *   Paginação numérica (botões Anterior/Próxima + números de página)
+    *   Filtros por dia do evento
+    *   Lightbox para visualização em tela cheia
+    *   Download de imagens com nome e extensão corretos
+*   **Inscrições Encerradas**: Botões de inscrição nas competições desabilitados automaticamente após o prazo.
 *   **Rolagem Suave**: Navegação limpa entre as seções.
 *   **Barra de Navegação Dinâmica**: A barra de navegação muda de aparência durante a rolagem para uma melhor experiência do usuário.
 
@@ -74,6 +80,7 @@ A maior parte do conteúdo do site é carregada dinamicamente a partir de arquiv
 
 *   **Programação**: Edite `assets/js/program.json` para adicionar ou modificar palestras, minicursos e outros eventos. A legenda de cores é gerada automaticamente a partir dos tipos e cores definidos aqui.
 *   **Competições**: Edite `assets/js/competitions.json` para detalhar as competições, incluindo prêmios, requisitos e links para editais.
+*   **Galeria de Fotos**: Edite `assets/js/gallery.json` para adicionar novas fotos. Cada foto pode ter atributos `day` (26 ou 27) para filtros e `span` para layout especial.
 *   **Palestrantes**: Edite `assets/js/speakers.json` para exibir os perfis dos palestrantes.
 *   **Edições Anteriores**: Edite `assets/js/previous-editions.json` para manter o histórico do evento.
 *   **Patrocinadores**: Adicione novos patrocinadores em `assets/js/sponsors.json` e inclua seus logos na pasta `assets/img/sponsors/`.
@@ -81,14 +88,43 @@ A maior parte do conteúdo do site é carregada dinamicamente a partir de arquiv
 
 #### Configurações Gerais
 
-*   **Data do Evento (Contador)**: Para alterar a data final do contador regressivo, edite a função `updateCountdown` no arquivo `assets/js/script.js`:
+*   **Data do Evento (Contador)**: Para alterar a data final do contador regressivo, edite a constante `eventDate` no arquivo `assets/js/script.js`:
     ```javascript
-    const eventDate = new Date('2025-11-26T00:00:00');
+    const CONFIG = {
+        eventDate: new Date('2025-11-26T08:00:00'),
+        imagesPerLoad: 8
+    };
     ```
 
 *   **Links de Inscrição**: Os links principais de inscrição podem ser atualizados diretamente no `index.html`, na seção `<section id="registration">`.
 
 *   **Cores e Estilos**: As cores principais e outros estilos globais podem ser ajustados no arquivo `assets/css/style.css`.
+
+## 🐛 Correções e Melhorias Recentes
+
+### Sistema de Galeria
+*   ✅ **Paginação Completa**: Implementação de sistema de paginação com botões numéricos e navegação Anterior/Próxima
+*   ✅ **Filtros por Dia**: Capacidade de filtrar fotos por dia do evento (Dia 26, Dia 27 ou Todos)
+*   ✅ **Scroll Automático**: Ao mudar de página, a galeria rola suavemente para o topo
+
+### Download de Imagens
+*   ✅ **Correção Crítica**: Corrigida função de download que estava quebrada com variáveis não declaradas
+*   ✅ **Nome de Arquivo**: Extração correta do nome do arquivo da URL
+*   ✅ **Extensão Válida**: Validação e preservação da extensão do arquivo (.jpg, .png, etc.)
+*   ✅ **Fallback Inteligente**: Uso do MIME type para determinar extensão quando não disponível na URL
+*   ✅ **Imagens Abrem Corretamente**: Arquivos baixados agora abrem normalmente em visualizadores de imagem
+
+### Inscrições
+*   ✅ **Botões Desabilitados**: Botões de inscrição nas competições automaticamente desabilitados com visual de "Inscrições Encerradas"
+*   ✅ **Ícone de Cadeado**: Indicador visual claro de que as inscrições não estão mais disponíveis
+
+### Contador Regressivo
+*   ✅ **Mensagem Pós-Evento**: Após o evento, o contador exibe "OBRIGADO! Até 2026" ao invés de "O EVENTO COMEÇOU!"
+
+### Código
+*   ✅ **Bugs Corrigidos**: Eliminação de todos os erros de sintaxe JavaScript
+*   ✅ **Código Limpo**: Estrutura reorganizada e otimizada
+*   ✅ **Performance**: Remoção de listeners duplicados para melhor performance
 
 ## 📄 Licença
 
